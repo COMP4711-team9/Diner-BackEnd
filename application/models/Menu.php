@@ -8,4 +8,6 @@ class Menu extends MY_Model {
 		parent::__construct();
 	}
 
+
+
 }
