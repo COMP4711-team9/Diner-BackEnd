@@ -29,6 +29,17 @@ class Maintenance extends Rest_Controller {
 	    }
 	}
 
+    // Handle an incoming GET ... return 1 menu item
+    function item_get()
+    {
+        $key = $this->get('id');
+        $result = $this->menu->get($key);
+        if ($result != null)
+            $this->response($result, 200);
+        else
+            $this->response(array('error' => 'Menu item not found!'), 404);
+    }
+
 	// Handle an incoming PUT - update a menu item
 	function index_put()
 	{
